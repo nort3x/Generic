@@ -1,0 +1,21 @@
+AllTests.java
+ AllTests
+TestR1_Persons.java
+ TestR1_Persons
+TestR5_Pianificazione.java
+ TestR5_Pianificazione
+TestApp.java
+ TestApp
+ TestApp$PersonListener
+TestR7_ReadingNotification.java
+ TestR7_ReadingNotification
+TestR2_Hubs.java
+ TestR2_Hubs
+TestR3_Reading.java
+ TestR3_Reading
+TestR6_Statistiche.java
+ TestR6_Statistiche
+TestR4_Orario.java
+ TestR4_Orario
+TestUtils.java
+ TestUtils

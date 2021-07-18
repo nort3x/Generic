@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestR7_ReadingNotification" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-06-22T13:56:21" hostname="bellacia" time="0.012">
+  <properties/>
+  <testcase name="testIncomplete" classname="TestR7_ReadingNotification" time="0.001"/>
+  <testcase name="testLoadPeople" classname="TestR7_ReadingNotification" time="0.002"/>
+  <testcase name="testLoadPeopleNoErr" classname="TestR7_ReadingNotification" time="0.001"/>
+  <testcase name="testWrongHeader1" classname="TestR7_ReadingNotification" time="0.001"/>
+  <testcase name="testWrongHeader2" classname="TestR7_ReadingNotification" time="0.001"/>
+  <testcase name="testIncomplete" classname="TestR7_ReadingNotification" time="0.001"/>
+  <testcase name="testLoadPeople" classname="TestR7_ReadingNotification" time="0.002"/>
+  <testcase name="testLoadPeopleNoErr" classname="TestR7_ReadingNotification" time="0.001"/>
+  <testcase name="testWrongHeader1" classname="TestR7_ReadingNotification" time="0.001"/>
+  <testcase name="testWrongHeader2" classname="TestR7_ReadingNotification" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

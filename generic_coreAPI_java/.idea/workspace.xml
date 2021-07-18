@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b6cd7988-6d6d-43e3-95c9-7a7e841a4875" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PROJE" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PROJE" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PROJE" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="15" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1tt4v8IYmEZ5YgcdXnnXlZFRP18" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="compactDirectories" value="true" />
+    <option name="flattenModules" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="external.system.task.project.file.to.start" value="$USER_HOME$/IdeaProjects/TeslaClientBackBone" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.PROJE [test]">
+    <configuration name="PROJE [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestR3_Reading.testIncomplete" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;TestR3_Reading.testIncomplete&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestR3_Reading.testLoadPeople" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;TestR3_Reading.testLoadPeople&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestR5_Pianificazione" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;TestR5_Pianificazione&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestR7_ReadingNotification.testLoadPeople" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;TestR7_ReadingNotification.testLoadPeople&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$USER_HOME$/IdeaProjects/TeslaClientBackBone" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.PROJE [test]" />
+        <item itemvalue="Gradle.TestR5_Pianificazione" />
+        <item itemvalue="Gradle.TestR7_ReadingNotification.testLoadPeople" />
+        <item itemvalue="Gradle.TestR3_Reading.testLoadPeople" />
+        <item itemvalue="Gradle.TestR3_Reading.testIncomplete" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b6cd7988-6d6d-43e3-95c9-7a7e841a4875" name="Default Changelist" comment="" />
+      <created>1623575279504</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623575279504</updated>
+      <workItem from="1623575285463" duration="515000" />
+      <workItem from="1623600069968" duration="2743000" />
+      <workItem from="1623603496360" duration="5000" />
+      <workItem from="1623619654015" duration="506000" />
+      <workItem from="1623653513893" duration="1550000" />
+      <workItem from="1623746498800" duration="1479000" />
+      <workItem from="1623749897505" duration="3204000" />
+      <workItem from="1623782135861" duration="10789000" />
+      <workItem from="1623831401186" duration="10000" />
+      <workItem from="1623839512663" duration="3732000" />
+      <workItem from="1623855512249" duration="5040000" />
+      <workItem from="1623861508206" duration="18000" />
+      <workItem from="1623861530280" duration="31000" />
+      <workItem from="1623861753345" duration="63000" />
+      <workItem from="1623862023476" duration="343000" />
+      <workItem from="1623872145408" duration="71000" />
+      <workItem from="1623872241100" duration="8940000" />
+      <workItem from="1623930475582" duration="13000" />
+      <workItem from="1624108946877" duration="4635000" />
+      <workItem from="1624274134157" duration="16389000" />
+      <workItem from="1624352352895" duration="83000" />
+      <workItem from="1624353509604" duration="5836000" />
+      <workItem from="1624362831248" duration="3000" />
+      <workItem from="1624363838495" duration="6374000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/neovortex" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="COLUMN_WIDTH">
+                <map>
+                  <entry key="2" value="96" />
+                  <entry key="3" value="95" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/neovortex" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="448" y="214" width="548" height="560" key="#com.intellij.ide.util.MemberChooser" timestamp="1624367169035">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state x="448" y="214" width="548" height="560" key="#com.intellij.ide.util.MemberChooser/0.0.1280.991@0.0.1280.991" timestamp="1624367169035" />
+    <state x="222" y="418" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1623790239789">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state x="222" y="418" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.991@0.0.1280.991" timestamp="1623790239789" />
+    <state x="373" y="244" width="524" height="502" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1624279812058">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state x="373" y="244" width="524" height="502" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1280.991@0.0.1280.991" timestamp="1624279812058" />
+    <state x="398" y="239" key="#xdebugger.evaluate" timestamp="1623921436154">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state x="398" y="239" key="#xdebugger.evaluate/0.0.1280.991@0.0.1280.991" timestamp="1623921436154" />
+    <state x="100" y="100" width="1080" height="791" key="DiffContextDialog" timestamp="1623747977661">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state x="100" y="100" width="1080" height="791" key="DiffContextDialog/0.0.1280.991@0.0.1280.991" timestamp="1623747977661" />
+    <state width="1234" height="328" key="GridCell.Tab.0.bottom" timestamp="1624370178271">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state width="1234" height="328" key="GridCell.Tab.0.bottom/0.0.1280.991@0.0.1280.991" timestamp="1624370178271" />
+    <state width="1234" height="328" key="GridCell.Tab.0.center" timestamp="1624370178270">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state width="1234" height="328" key="GridCell.Tab.0.center/0.0.1280.991@0.0.1280.991" timestamp="1624370178270" />
+    <state width="1234" height="328" key="GridCell.Tab.0.left" timestamp="1624370178268">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state width="1234" height="328" key="GridCell.Tab.0.left/0.0.1280.991@0.0.1280.991" timestamp="1624370178268" />
+    <state width="1234" height="328" key="GridCell.Tab.0.right" timestamp="1624370178271">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state width="1234" height="328" key="GridCell.Tab.0.right/0.0.1280.991@0.0.1280.991" timestamp="1624370178271" />
+    <state width="1234" height="333" key="GridCell.Tab.1.bottom" timestamp="1624370005547">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state width="1234" height="333" key="GridCell.Tab.1.bottom/0.0.1280.991@0.0.1280.991" timestamp="1624370005547" />
+    <state width="1234" height="333" key="GridCell.Tab.1.center" timestamp="1624370005546">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state width="1234" height="333" key="GridCell.Tab.1.center/0.0.1280.991@0.0.1280.991" timestamp="1624370005546" />
+    <state width="1234" height="333" key="GridCell.Tab.1.left" timestamp="1624370005546">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state width="1234" height="333" key="GridCell.Tab.1.left/0.0.1280.991@0.0.1280.991" timestamp="1624370005546" />
+    <state width="1234" height="333" key="GridCell.Tab.1.right" timestamp="1624370005547">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state width="1234" height="333" key="GridCell.Tab.1.right/0.0.1280.991@0.0.1280.991" timestamp="1624370005547" />
+    <state x="-217" y="147" width="1141" height="844" key="SettingsEditor" timestamp="1624364162425">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state x="-217" y="147" width="1141" height="844" key="SettingsEditor/0.0.1280.991@0.0.1280.991" timestamp="1624364162425" />
+    <state x="100" y="100" width="1080" height="791" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1624281647745">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state x="100" y="100" width="1080" height="791" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.991@0.0.1280.991" timestamp="1624281647745" />
+    <state x="312" y="388" width="635" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1624364098687">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state x="312" y="388" width="635" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.991@0.0.1280.991" timestamp="1624364098687" />
+    <state x="182" y="191" width="867" height="554" maximized="true" key="dock-window-1" timestamp="1623792262814">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state x="182" y="191" width="867" height="554" maximized="true" key="dock-window-1/0.0.1280.991@0.0.1280.991" timestamp="1623792262814" />
+    <state x="330" y="227" width="620" height="536" key="find.popup" timestamp="1623920536450">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state x="330" y="227" width="620" height="536" key="find.popup/0.0.1280.991@0.0.1280.991" timestamp="1623920536450" />
+    <state width="300" height="490" key="javadoc.popup.new" timestamp="1624369057425">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state width="300" height="490" key="javadoc.popup.new/0.0.1280.991@0.0.1280.991" timestamp="1624369057425" />
+    <state x="0" y="75" width="1270" height="840" key="new project wizard" timestamp="1624277001256">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state x="0" y="75" width="1270" height="840" key="new project wizard/0.0.1280.991@0.0.1280.991" timestamp="1624277001256" />
+    <state x="304" y="225" key="run.anything.popup" timestamp="1624358957570">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state x="304" y="225" key="run.anything.popup/0.0.1280.991@0.0.1280.991" timestamp="1624358957570" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/math/rootfinder/BisectionRootFinder.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/math/rootfinder/BisectionRootFinder.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/math/rootfinder/BisectionRootFinder.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/math/rootfinder/BisectionRootFinder.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/math/calculus/sample/SampleFunction.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/math/calculus/sample/SampleFunction.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/math/rootfinder/NewtonRaphsonRootFinderGeneralSymmetricSystem.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestR4_Orario.java</url>
+          <line>37</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestR3_Reading.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestR3_Reading.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/it/polito/oop/vaccination/PersonLoader.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/it/polito/oop/vaccination/PersonLoader.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/it/polito/oop/vaccination/PersonLoader.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/it/polito/oop/vaccination/Vaccines.java</url>
+          <line>324</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/it/polito/oop/vaccination/Vaccines.java</url>
+          <line>341</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/CalculusUnitTest.java</url>
+          <line>93</line>
+          <properties class="CalculusUnitTest">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/math/calculus/sample/SampleFunction.java</url>
+          <line>56</line>
+          <properties class="math.calculus.sample.SampleFunction">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/math/calculus/sample/SampleFunction.java</url>
+          <line>68</line>
+          <properties class="math.calculus.sample.SampleFunction">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
