@@ -11,8 +11,8 @@ it consist of two parts for implementing:
 requested game is a turn-based game (like warcraft) with single player and MVC solution is requested
 it has a good english proposal which consist of 17 pages and provide much detail about implementation
 
-you can find the provided skeleton_classes and project in its raw form in provided rar
-also project document is provided as well
+you can find the provided skeleton_classes and project in its raw form in provided <a href="https://github.com/nort3x/Generic/blob/main/ChamranUniversityCpp_Advanced_Programming_992_Project/Advanced_Programming_992_Project.rar">rar</a> <br/>
+also project <a href="https://github.com/nort3x/Generic/blob/main/ChamranUniversityCpp_Advanced_Programming_992_Project/FinalProjectDescription.pdf">document</a> is provided as well<br/>
 
 my implementation as reference is provided in imp sub-dir
 
