@@ -16,7 +16,13 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated />
@@ -28,46 +34,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43de21d1-c439-4adf-8d4a-ef165e6993b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ChamranUniversityCpp_Advanced_Programming_992_Project/Advanced_Programming_992_Project.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChamranUniversityCpp_Advanced_Programming_992_Project/FinalProjectDescription.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChamranUniversityCpp_Advanced_Programming_992_Project/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/.idea/libraries/sqlite_jdbc_3_36_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/SM_DM.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/generic_OOP_CRUD_DesignPattern_java.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/database/Averager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/database/IDatabase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/database/SM_DB.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/database/SM_Model$Course.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/database/SM_Model$Student.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/database/SM_Model$TableFieldType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/database/SM_Model$TableNames.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/database/SM_Model.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/objects/CommandLine$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/objects/CommandLine$Color.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/objects/CommandLine$State.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/objects/CommandLine.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/objects/Course.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/objects/Student.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/utils/Populater.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/out/production/generic_OOP_CRUD_DesignPattern_java/ir/ttic/student_manager/utils/RandomGenerator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/sqlite-jdbc-3.36.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/src/ir/ttic/student_manager/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/src/ir/ttic/student_manager/database/Averager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/src/ir/ttic/student_manager/database/IDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/src/ir/ttic/student_manager/database/SM_DB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/src/ir/ttic/student_manager/database/SM_Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/src/ir/ttic/student_manager/objects/CommandLine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/src/ir/ttic/student_manager/objects/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/src/ir/ttic/student_manager/objects/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/src/ir/ttic/student_manager/utils/Populater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic_OOP_CRUD_DesignPattern_java/src/ir/ttic/student_manager/utils/RandomGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,13 +68,6 @@
       <recent name="$PROJECT_DIR$/ChamranUniversityCpp_Advanced_Programming_992_Project" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -117,7 +77,8 @@
       <option name="presentableId" value="Default" />
       <updated>1626619919367</updated>
       <workItem from="1626619921176" duration="789000" />
-      <workItem from="1626620754566" duration="1422000" />
+      <workItem from="1626620754566" duration="1556000" />
+      <workItem from="1626623256668" duration="654000" />
     </task>
     <servers />
   </component>
@@ -129,7 +90,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -144,5 +117,13 @@
       <screen x="0" y="0" width="1280" height="991" />
     </state>
     <state x="418" y="238" width="424" height="513" key="FileChooserDialogImpl/0.0.1280.991@0.0.1280.991" timestamp="1626621347281" />
+    <state width="257" height="520" key="HiddenNamespacesPopup" timestamp="1626623192360">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state width="257" height="520" key="HiddenNamespacesPopup/0.0.1280.991@0.0.1280.991" timestamp="1626623192360" />
+    <state x="235" y="231" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1626623136819">
+      <screen x="0" y="0" width="1280" height="991" />
+    </state>
+    <state x="235" y="231" width="800" height="527" key="Vcs.Push.Dialog.v2/0.0.1280.991@0.0.1280.991" timestamp="1626623136819" />
   </component>
 </project>

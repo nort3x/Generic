@@ -1,0 +1,10 @@
+it/polito/oop/vaccination/Hub.java
+ it.polito.oop.vaccination.Hub
+it/polito/oop/vaccination/VaccineException.java
+ it.polito.oop.vaccination.VaccineException
+it/polito/oop/vaccination/PersonLoader.java
+ it.polito.oop.vaccination.PersonLoader
+it/polito/oop/vaccination/Person.java
+ it.polito.oop.vaccination.Person
+it/polito/oop/vaccination/Vaccines.java
+ it.polito.oop.vaccination.Vaccines

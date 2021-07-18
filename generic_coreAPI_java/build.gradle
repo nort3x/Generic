@@ -1,0 +1,22 @@
+repositories {
+    mavenCentral()
+
+}
+
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+
+dependencies {
+
+
+    testImplementation('junit:junit:4.13')
+
+
+}
+
+test {
+    useJUnit()
+}
+
