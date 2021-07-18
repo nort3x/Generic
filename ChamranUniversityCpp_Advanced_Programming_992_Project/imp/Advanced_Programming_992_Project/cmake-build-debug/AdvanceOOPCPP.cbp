@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="AdvanceOOPCPP"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="AdvanceOOPCPP">
+				<Option output="/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/AdvanceOOPCPP" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/10"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
+					<Add directory="/usr/include/c++/10/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 AdvanceOOPCPP"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="AdvanceOOPCPP/fast">
+				<Option output="/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/AdvanceOOPCPP" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/10"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
+					<Add directory="/usr/include/c++/10/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 AdvanceOOPCPP/fast"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/include/Agent.h">
+			<Option target="AdvanceOOPCPP"/>
+		</Unit>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/include/Agent_factory.h">
+			<Option target="AdvanceOOPCPP"/>
+		</Unit>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/include/Geometry.h">
+			<Option target="AdvanceOOPCPP"/>
+		</Unit>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/include/Model.h">
+			<Option target="AdvanceOOPCPP"/>
+		</Unit>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/include/Moving_object.h">
+			<Option target="AdvanceOOPCPP"/>
+		</Unit>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/include/Sim_object.h">
+			<Option target="AdvanceOOPCPP"/>
+		</Unit>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/include/Soldier.h">
+			<Option target="AdvanceOOPCPP"/>
+		</Unit>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/include/exceptions.h">
+			<Option target="AdvanceOOPCPP"/>
+		</Unit>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/lib/Agent_factory.cpp">
+			<Option target="AdvanceOOPCPP"/>
+		</Unit>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/lib/Geometry.cpp">
+			<Option target="AdvanceOOPCPP"/>
+		</Unit>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/lib/Model.cpp">
+			<Option target="AdvanceOOPCPP"/>
+		</Unit>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/lib/Moving_object.cpp">
+			<Option target="AdvanceOOPCPP"/>
+		</Unit>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/lib/Soldier.cpp">
+			<Option target="AdvanceOOPCPP"/>
+		</Unit>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/mainTest.cpp">
+			<Option target="AdvanceOOPCPP"/>
+		</Unit>
+		<Unit filename="/root/Desktop/Advanced_Programming_992_Project/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

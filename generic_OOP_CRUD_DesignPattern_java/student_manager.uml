@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ir.ttic.student_manager</OriginalElement>
+  <nodes>
+    <node x="739.84375" y="1425.0">ir.ttic.student_manager.database.SM_DB</node>
+    <node x="242.11307692307707" y="1525.0">ir.ttic.student_manager.objects.CommandLine</node>
+    <node x="1202.1437500000002" y="482.0">ir.ttic.student_manager.utils.RandomGenerator</node>
+    <node x="189.09375" y="25.0">ir.ttic.student_manager.objects.Course</node>
+    <node x="924.5649679487178" y="1082.5">ir.ttic.student_manager.database.SM_Model</node>
+    <node x="211.92666666666668" y="856.0">ir.ttic.student_manager.database.Averager</node>
+    <node x="455.9266666666667" y="432.0">ir.ttic.student_manager.database.IDatabase</node>
+    <node x="531.09375" y="0.0">ir.ttic.student_manager.objects.Student</node>
+    <node x="1100.5649679487178" y="1068.5">ir.ttic.student_manager.utils.Populater</node>
+    <node x="791.0193269230771" y="1914.0">ir.ttic.student_manager.Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ir.ttic.student_manager.database.SM_DB" target="ir.ttic.student_manager.objects.Course" relationship="CREATE">
+      <point x="-53.0" y="-218.5" />
+      <point x="898.84375" y="1404.0" />
+      <point x="871.4266666666667" y="1404.0" />
+      <point x="871.4266666666667" y="412.0" />
+      <point x="666.1260897435895" y="412.0" />
+      <point x="666.1260897435895" y="382.0" />
+      <point x="430.59375" y="382.0" />
+      <point x="80.5" y="156.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.database.Averager" target="ir.ttic.student_manager.objects.Student" relationship="DEPENDENCY">
+      <point x="57.0" y="-243.5" />
+      <point x="496.9266666666667" y="835.0" />
+      <point x="445.4266666666667" y="835.0" />
+      <point x="445.4266666666667" y="402.0" />
+      <point x="949.2510897435897" y="402.0" />
+      <point x="949.2510897435897" y="392.0" />
+      <point x="699.09375" y="392.0" />
+      <point x="56.0" y="181.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.Main" target="ir.ttic.student_manager.utils.Populater" relationship="DEPENDENCY">
+      <point x="59.333333333333314" y="-31.0" />
+      <point x="939.3526602564104" y="1893.0" />
+      <point x="1262.5649679487178" y="1893.0" />
+      <point x="0.0" y="31.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.database.Averager" target="ir.ttic.student_manager.objects.Course" relationship="DEPENDENCY">
+      <point x="-57.0" y="-243.5" />
+      <point x="382.9266666666667" y="835.0" />
+      <point x="434.4266666666667" y="835.0" />
+      <point x="434.4266666666667" y="412.0" />
+      <point x="666.1260897435895" y="412.0" />
+      <point x="666.1260897435895" y="382.0" />
+      <point x="430.59375" y="382.0" />
+      <point x="80.5" y="156.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.objects.CommandLine" target="ir.ttic.student_manager.database.IDatabase" relationship="DEPENDENCY">
+      <point x="80.93749999999997" y="-118.5" />
+      <point x="452.5505769230771" y="1384.0" />
+      <point x="752.5100000000001" y="1384.0" />
+      <point x="752.51" y="815.0" />
+      <point x="775.0933333333334" y="815.0" />
+      <point x="127.66666666666669" y="181.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.objects.CommandLine" target="ir.ttic.student_manager.objects.Student" relationship="TO_ONE">
+      <point x="-80.9375" y="-118.5" />
+      <point x="290.6755769230771" y="1394.0" />
+      <point x="179.42666666666668" y="1394.0" />
+      <point x="179.42666666666668" y="392.0" />
+      <point x="587.09375" y="392.0" />
+      <point x="-56.0" y="181.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.objects.CommandLine" target="ir.ttic.student_manager.objects.Course" relationship="CREATE">
+      <point x="-48.5625" y="-118.5" />
+      <point x="323.0505769230771" y="1384.0" />
+      <point x="190.42666666666668" y="1384.0" />
+      <point x="190.42666666666668" y="412.0" />
+      <point x="666.1260897435895" y="412.0" />
+      <point x="666.1260897435895" y="382.0" />
+      <point x="430.59375" y="382.0" />
+      <point x="80.5" y="156.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.objects.CommandLine" target="ir.ttic.student_manager.objects.Student" relationship="CREATE">
+      <point x="113.31249999999997" y="-118.5" />
+      <point x="484.9255769230771" y="1394.0" />
+      <point x="849.4266666666667" y="1394.0" />
+      <point x="849.4266666666667" y="402.0" />
+      <point x="949.2510897435897" y="402.0" />
+      <point x="949.2510897435897" y="392.0" />
+      <point x="699.09375" y="392.0" />
+      <point x="56.0" y="181.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.utils.Populater" target="ir.ttic.student_manager.objects.Course" relationship="DEPENDENCY">
+      <point x="-64.80000000000007" y="-31.0" />
+      <point x="1197.7649679487176" y="815.0" />
+      <point x="1099.5054487179489" y="815.0" />
+      <point x="1099.5054487179489" y="412.0" />
+      <point x="666.1260897435895" y="412.0" />
+      <point x="666.1260897435895" y="382.0" />
+      <point x="430.59375" y="382.0" />
+      <point x="80.5" y="156.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.objects.CommandLine" target="ir.ttic.student_manager.database.Averager" relationship="CREATE">
+      <point x="48.56249999999997" y="-118.5" />
+      <point x="420.1755769230771" y="1374.0" />
+      <point x="553.9266666666667" y="1374.0" />
+      <point x="114.0" y="243.5" />
+    </edge>
+    <edge source="ir.ttic.student_manager.database.IDatabase" target="ir.ttic.student_manager.objects.Student" relationship="DEPENDENCY">
+      <point x="95.75" y="-181.0" />
+      <point x="743.1766666666667" y="402.0" />
+      <point x="949.2510897435897" y="402.0" />
+      <point x="949.2510897435897" y="392.0" />
+      <point x="699.09375" y="392.0" />
+      <point x="56.0" y="181.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.database.SM_DB" target="ir.ttic.student_manager.objects.Student" relationship="CREATE">
+      <point x="53.0" y="-218.5" />
+      <point x="1004.84375" y="1404.0" />
+      <point x="914.0649679487178" y="1404.0" />
+      <point x="914.0649679487178" y="402.0" />
+      <point x="949.2510897435897" y="402.0" />
+      <point x="949.2510897435897" y="392.0" />
+      <point x="699.09375" y="392.0" />
+      <point x="56.0" y="181.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.database.SM_DB" target="ir.ttic.student_manager.database.SM_Model" relationship="DEPENDENCY">
+      <point x="159.0" y="-218.5" />
+      <point x="1110.84375" y="1394.0" />
+      <point x="997.0649679487178" y="1394.0" />
+      <point x="0.0" y="17.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.Main" target="ir.ttic.student_manager.database.SM_DB" relationship="CREATE">
+      <point x="0.0" y="-31.0" />
+      <point x="880.0193269230771" y="1883.0" />
+      <point x="951.84375" y="1883.0" />
+      <point x="0.0" y="218.5" />
+    </edge>
+    <edge source="ir.ttic.student_manager.database.IDatabase" target="ir.ttic.student_manager.objects.Course" relationship="DEPENDENCY">
+      <point x="-95.75" y="-181.0" />
+      <point x="551.6766666666667" y="412.0" />
+      <point x="666.1260897435895" y="412.0" />
+      <point x="666.1260897435895" y="382.0" />
+      <point x="430.59375" y="382.0" />
+      <point x="80.5" y="156.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.utils.Populater" target="ir.ttic.student_manager.objects.Student" relationship="DEPENDENCY">
+      <point x="129.60000000000002" y="-31.0" />
+      <point x="1392.1649679487177" y="835.0" />
+      <point x="1474.6437500000002" y="835.0" />
+      <point x="1474.6437500000002" y="402.0" />
+      <point x="949.2510897435897" y="402.0" />
+      <point x="949.2510897435897" y="392.0" />
+      <point x="699.09375" y="392.0" />
+      <point x="56.0" y="181.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.database.Averager" target="ir.ttic.student_manager.database.IDatabase" relationship="REALIZATION">
+      <point x="171.0" y="-243.5" />
+      <point x="610.9266666666667" y="835.0" />
+      <point x="679.0649679487178" y="835.0" />
+      <point x="679.0649679487178" y="825.0" />
+      <point x="647.4266666666667" y="825.0" />
+      <point x="0.0" y="181.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.utils.Populater" target="ir.ttic.student_manager.database.IDatabase" relationship="DEPENDENCY">
+      <point x="-129.60000000000002" y="-31.0" />
+      <point x="1132.964967948718" y="825.0" />
+      <point x="752.51" y="825.0" />
+      <point x="752.51" y="815.0" />
+      <point x="775.0933333333334" y="815.0" />
+      <point x="127.66666666666669" y="181.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.utils.Populater" target="ir.ttic.student_manager.utils.RandomGenerator" relationship="CREATE">
+      <point x="0.0" y="-31.0" />
+      <point x="1262.5649679487178" y="835.0" />
+      <point x="1267.6437500000002" y="835.0" />
+      <point x="-65.5" y="131.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.objects.CommandLine" target="ir.ttic.student_manager.database.IDatabase" relationship="TO_ONE">
+      <point x="-16.1875" y="-118.5" />
+      <point x="355.4255769230771" y="1374.0" />
+      <point x="201.42666666666668" y="1374.0" />
+      <point x="201.42666666666668" y="825.0" />
+      <point x="519.76" y="825.0" />
+      <point x="-127.66666666666667" y="181.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.database.Averager" target="ir.ttic.student_manager.database.IDatabase" relationship="TO_ONE">
+      <point x="-171.0" y="-243.5" />
+      <point x="268.9266666666667" y="835.0" />
+      <point x="201.42666666666668" y="835.0" />
+      <point x="201.42666666666668" y="825.0" />
+      <point x="519.76" y="825.0" />
+      <point x="-127.66666666666667" y="181.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.Main" target="ir.ttic.student_manager.objects.CommandLine" relationship="CREATE">
+      <point x="-59.33333333333337" y="-31.0" />
+      <point x="820.6859935897437" y="1893.0" />
+      <point x="371.6130769230771" y="1893.0" />
+      <point x="0.0" y="118.5" />
+    </edge>
+    <edge source="ir.ttic.student_manager.utils.RandomGenerator" target="ir.ttic.student_manager.objects.Student" relationship="CREATE">
+      <point x="65.5" y="-131.0" />
+      <point x="1398.6437500000002" y="402.0" />
+      <point x="949.2510897435897" y="402.0" />
+      <point x="949.2510897435897" y="392.0" />
+      <point x="699.09375" y="392.0" />
+      <point x="56.0" y="181.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.database.SM_DB" target="ir.ttic.student_manager.database.IDatabase" relationship="REALIZATION">
+      <point x="-159.0" y="-218.5" />
+      <point x="792.84375" y="1404.0" />
+      <point x="860.4266666666667" y="1404.0" />
+      <point x="860.4266666666667" y="835.0" />
+      <point x="679.0649679487178" y="835.0" />
+      <point x="679.0649679487178" y="825.0" />
+      <point x="647.4266666666667" y="825.0" />
+      <point x="0.0" y="181.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.objects.CommandLine" target="ir.ttic.student_manager.objects.Course" relationship="TO_ONE">
+      <point x="-113.3125" y="-118.5" />
+      <point x="258.3005769230771" y="1404.0" />
+      <point x="0.0" y="1404.0" />
+      <point x="0.0" y="382.0" />
+      <point x="269.59375" y="382.0" />
+      <point x="-80.5" y="156.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.utils.RandomGenerator" target="ir.ttic.student_manager.objects.Course" relationship="CREATE">
+      <point x="-65.5" y="-131.0" />
+      <point x="1267.6437500000002" y="412.0" />
+      <point x="666.1260897435895" y="412.0" />
+      <point x="666.1260897435895" y="382.0" />
+      <point x="430.59375" y="382.0" />
+      <point x="80.5" y="156.0" />
+    </edge>
+    <edge source="ir.ttic.student_manager.objects.CommandLine" target="ir.ttic.student_manager.database.Averager" relationship="TO_ONE">
+      <point x="16.18749999999997" y="-118.5" />
+      <point x="387.8005769230771" y="1364.0" />
+      <point x="325.9266666666667" y="1364.0" />
+      <point x="-114.0" y="243.5" />
+    </edge>
+    <edge source="ir.ttic.student_manager.utils.Populater" target="ir.ttic.student_manager.utils.RandomGenerator" relationship="TO_ONE">
+      <point x="64.79999999999995" y="-31.0" />
+      <point x="1327.3649679487178" y="825.0" />
+      <point x="1398.6437500000002" y="825.0" />
+      <point x="65.5" y="131.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.407314629258517" showDependencies="true" x="737.5" y="988.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
