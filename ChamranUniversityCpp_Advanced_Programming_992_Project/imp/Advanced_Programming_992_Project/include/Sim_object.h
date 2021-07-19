@@ -3,7 +3,7 @@
 #define SIM_OBJECT_H
 
 #include <string>
-
+#include <iostream>
 struct Point;
 
 /* The Sim_object class provides the interface for all of simulation objects.

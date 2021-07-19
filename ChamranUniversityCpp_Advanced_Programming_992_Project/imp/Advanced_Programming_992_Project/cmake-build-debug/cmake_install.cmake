@@ -1,4 +1,4 @@
-# Install script for directory: /root/Desktop/Advanced_Programming_992_Project
+# Install script for directory: /root/Desktop/Generic/ChamranUniversityCpp_Advanced_Programming_992_Project/imp/Advanced_Programming_992_Project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/root/Desktop/Generic/ChamranUniversityCpp_Advanced_Programming_992_Project/imp/Advanced_Programming_992_Project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

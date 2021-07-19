@@ -68,10 +68,10 @@ RM = /root/Dev/clion-2020.2.1/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/Desktop/Advanced_Programming_992_Project
+CMAKE_SOURCE_DIR = /root/Desktop/Generic/ChamranUniversityCpp_Advanced_Programming_992_Project/imp/Advanced_Programming_992_Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/Desktop/Advanced_Programming_992_Project/cmake-build-debug
+CMAKE_BINARY_DIR = /root/Desktop/Generic/ChamranUniversityCpp_Advanced_Programming_992_Project/imp/Advanced_Programming_992_Project/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/CMakeFiles /root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Desktop/Generic/ChamranUniversityCpp_Advanced_Programming_992_Project/imp/Advanced_Programming_992_Project/cmake-build-debug/CMakeFiles /root/Desktop/Generic/ChamranUniversityCpp_Advanced_Programming_992_Project/imp/Advanced_Programming_992_Project/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/Desktop/Advanced_Programming_992_Project/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Desktop/Generic/ChamranUniversityCpp_Advanced_Programming_992_Project/imp/Advanced_Programming_992_Project/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -169,6 +169,60 @@ lib/Agent_factory.s: lib/Agent_factory.cpp.s
 lib/Agent_factory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Agent_factory.cpp.s
 .PHONY : lib/Agent_factory.cpp.s
+
+lib/Controller.o: lib/Controller.cpp.o
+
+.PHONY : lib/Controller.o
+
+# target to build an object file
+lib/Controller.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Controller.cpp.o
+.PHONY : lib/Controller.cpp.o
+
+lib/Controller.i: lib/Controller.cpp.i
+
+.PHONY : lib/Controller.i
+
+# target to preprocess a source file
+lib/Controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Controller.cpp.i
+.PHONY : lib/Controller.cpp.i
+
+lib/Controller.s: lib/Controller.cpp.s
+
+.PHONY : lib/Controller.s
+
+# target to generate assembly for a file
+lib/Controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Controller.cpp.s
+.PHONY : lib/Controller.cpp.s
+
+lib/Farm.o: lib/Farm.cpp.o
+
+.PHONY : lib/Farm.o
+
+# target to build an object file
+lib/Farm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Farm.cpp.o
+.PHONY : lib/Farm.cpp.o
+
+lib/Farm.i: lib/Farm.cpp.i
+
+.PHONY : lib/Farm.i
+
+# target to preprocess a source file
+lib/Farm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Farm.cpp.i
+.PHONY : lib/Farm.cpp.i
+
+lib/Farm.s: lib/Farm.cpp.s
+
+.PHONY : lib/Farm.s
+
+# target to generate assembly for a file
+lib/Farm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Farm.cpp.s
+.PHONY : lib/Farm.cpp.s
 
 lib/Geometry.o: lib/Geometry.cpp.o
 
@@ -251,6 +305,33 @@ lib/Moving_object.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Moving_object.cpp.s
 .PHONY : lib/Moving_object.cpp.s
 
+lib/Peasant.o: lib/Peasant.cpp.o
+
+.PHONY : lib/Peasant.o
+
+# target to build an object file
+lib/Peasant.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Peasant.cpp.o
+.PHONY : lib/Peasant.cpp.o
+
+lib/Peasant.i: lib/Peasant.cpp.i
+
+.PHONY : lib/Peasant.i
+
+# target to preprocess a source file
+lib/Peasant.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Peasant.cpp.i
+.PHONY : lib/Peasant.cpp.i
+
+lib/Peasant.s: lib/Peasant.cpp.s
+
+.PHONY : lib/Peasant.s
+
+# target to generate assembly for a file
+lib/Peasant.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Peasant.cpp.s
+.PHONY : lib/Peasant.cpp.s
+
 lib/Soldier.o: lib/Soldier.cpp.o
 
 .PHONY : lib/Soldier.o
@@ -277,6 +358,87 @@ lib/Soldier.s: lib/Soldier.cpp.s
 lib/Soldier.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Soldier.cpp.s
 .PHONY : lib/Soldier.cpp.s
+
+lib/Structure_factory.o: lib/Structure_factory.cpp.o
+
+.PHONY : lib/Structure_factory.o
+
+# target to build an object file
+lib/Structure_factory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Structure_factory.cpp.o
+.PHONY : lib/Structure_factory.cpp.o
+
+lib/Structure_factory.i: lib/Structure_factory.cpp.i
+
+.PHONY : lib/Structure_factory.i
+
+# target to preprocess a source file
+lib/Structure_factory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Structure_factory.cpp.i
+.PHONY : lib/Structure_factory.cpp.i
+
+lib/Structure_factory.s: lib/Structure_factory.cpp.s
+
+.PHONY : lib/Structure_factory.s
+
+# target to generate assembly for a file
+lib/Structure_factory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Structure_factory.cpp.s
+.PHONY : lib/Structure_factory.cpp.s
+
+lib/Town_Hall.o: lib/Town_Hall.cpp.o
+
+.PHONY : lib/Town_Hall.o
+
+# target to build an object file
+lib/Town_Hall.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Town_Hall.cpp.o
+.PHONY : lib/Town_Hall.cpp.o
+
+lib/Town_Hall.i: lib/Town_Hall.cpp.i
+
+.PHONY : lib/Town_Hall.i
+
+# target to preprocess a source file
+lib/Town_Hall.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Town_Hall.cpp.i
+.PHONY : lib/Town_Hall.cpp.i
+
+lib/Town_Hall.s: lib/Town_Hall.cpp.s
+
+.PHONY : lib/Town_Hall.s
+
+# target to generate assembly for a file
+lib/Town_Hall.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/Town_Hall.cpp.s
+.PHONY : lib/Town_Hall.cpp.s
+
+lib/View.o: lib/View.cpp.o
+
+.PHONY : lib/View.o
+
+# target to build an object file
+lib/View.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/View.cpp.o
+.PHONY : lib/View.cpp.o
+
+lib/View.i: lib/View.cpp.i
+
+.PHONY : lib/View.i
+
+# target to preprocess a source file
+lib/View.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/View.cpp.i
+.PHONY : lib/View.cpp.i
+
+lib/View.s: lib/View.cpp.s
+
+.PHONY : lib/View.s
+
+# target to generate assembly for a file
+lib/View.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AdvanceOOPCPP.dir/build.make CMakeFiles/AdvanceOOPCPP.dir/lib/View.cpp.s
+.PHONY : lib/View.cpp.s
 
 mainTest.o: mainTest.cpp.o
 
@@ -317,6 +479,12 @@ help:
 	@echo "... lib/Agent_factory.o"
 	@echo "... lib/Agent_factory.i"
 	@echo "... lib/Agent_factory.s"
+	@echo "... lib/Controller.o"
+	@echo "... lib/Controller.i"
+	@echo "... lib/Controller.s"
+	@echo "... lib/Farm.o"
+	@echo "... lib/Farm.i"
+	@echo "... lib/Farm.s"
 	@echo "... lib/Geometry.o"
 	@echo "... lib/Geometry.i"
 	@echo "... lib/Geometry.s"
@@ -326,9 +494,21 @@ help:
 	@echo "... lib/Moving_object.o"
 	@echo "... lib/Moving_object.i"
 	@echo "... lib/Moving_object.s"
+	@echo "... lib/Peasant.o"
+	@echo "... lib/Peasant.i"
+	@echo "... lib/Peasant.s"
 	@echo "... lib/Soldier.o"
 	@echo "... lib/Soldier.i"
 	@echo "... lib/Soldier.s"
+	@echo "... lib/Structure_factory.o"
+	@echo "... lib/Structure_factory.i"
+	@echo "... lib/Structure_factory.s"
+	@echo "... lib/Town_Hall.o"
+	@echo "... lib/Town_Hall.i"
+	@echo "... lib/Town_Hall.s"
+	@echo "... lib/View.o"
+	@echo "... lib/View.i"
+	@echo "... lib/View.s"
 	@echo "... mainTest.o"
 	@echo "... mainTest.i"
 	@echo "... mainTest.s"

@@ -14,7 +14,6 @@ start attacking its attacker.
 class Soldier:public Agent {
 public:
 
-    // *** define as specified
     Soldier(const std::string &name, const Point &location);
 
     Soldier(const std::string &name, const Point &location, int health);

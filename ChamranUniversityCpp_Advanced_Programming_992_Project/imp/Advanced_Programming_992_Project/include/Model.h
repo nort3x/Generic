@@ -31,10 +31,10 @@ class Model {
 public:
 	// Output a message after doing all initialization and clean-up work
 	// create the initial objects
-	Model()  = default;
+	Model();
 	
 	// destroy all objects
-	~Model() = default;
+	~Model();
 
 	// return the current time
 	int get_time() const {return time;}
@@ -86,8 +86,8 @@ private:
 	Model& operator= (Model&&) = delete;
 
 	int time = 0;
-	std::vector<Agent> agents;
-	std::vector<Structure> structs;
+	std::vector<Agent*> agents;
+	std::vector<Structure*> structs;
 };
 
 #endif

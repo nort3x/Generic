@@ -1,8 +1,6 @@
-/* *** Comments starting with *** (like this one) in this skeleton file are
-instructions for you and should be deleted after you have dealt with them.
-You must add code to this file to meet the requirements in the project document,
-the comments below, and other relevant course content.
-*/
+
+#ifndef VIEW_H
+#define VIEW_H
 
 /* *** View class ***
 The View class encapsulates the data and functions needed to generate the map
@@ -37,33 +35,49 @@ You can add private members of your choice.
 You must delete this comment and all other comments that start with "***".
 */
 
+#include <string>
+#include <iostream>
+#include <vector>
+#include "Sim_object.h"
+
+struct Point;
+
 class View {
 public:
-	// default constructor sets the default size, scale, and origin, outputs constructor message
-	View(); 
+    // default constructor sets the default size, scale, and origin, outputs constructor message
+    View();
+
     // destructor outputs a message
     ~View();
-	
-	// Save the supplied name and location for future use in a draw() call
-	// If the name is already present,the new location replaces the previous one.
-	void update_location(const std::string& name, Point location);
-	
-	// Remove the name and its location; no error if the name is not present.
-	void update_remove(const std::string& name);
-	
-	// prints out the current map
-	void draw() const;
 
-	// Modify the display parameters:
-	// If the size is out of bounds will throw Error("New map size is too big!")
-	// or Error("New map size is too small!").
-	void set_size(int size_);
-	
-	// If scale is not postive, will throw Error("New map scale must be positive!");
-	void set_scale(double scale_);
-	
-	// Any values are legal for the origin
-	void set_origin(Point origin_);
-	
-	// Set the parameters to the default values
-	void set_defaults();
+    // Save the supplied name and location for future use in a draw() call
+    // If the name is already present,the new location replaces the previous one.
+    void update_location(const std::string &name, Point location);
+
+    // Remove the name and its location; no error if the name is not present.
+    void update_remove(const std::string &name);
+
+    // prints out the current map
+    void draw() const;
+
+    // Modify the display parameters:
+    // If the size is out of bounds will throw Error("New map size is too big!")
+    // or Error("New map size is too small!").
+    void set_size(int size_);
+
+    // If scale is not postive, will throw Error("New map scale must be positive!");
+    void set_scale(double scale_);
+
+    // Any values are legal for the origin
+    void set_origin(Point origin_);
+
+    // Set the parameters to the default values
+    void set_defaults();
+
+private:
+    int rowSize=25,colSize=25;
+    std::vector<std::vector<Sim_object*>> viewMat;
+
+};
+
+#endif

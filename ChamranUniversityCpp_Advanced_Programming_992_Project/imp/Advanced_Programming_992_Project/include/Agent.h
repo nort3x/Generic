@@ -87,10 +87,10 @@ public:
         cout << "   at " << get_location() << endl;
         cout << "   Health is " << health << endl;
         cout << "   Moving at speed " << get_current_speed() << " to " << get_current_destination() << endl;
-        cout << "   Stopped" << !is_moving() << endl;
-        cout << "   Is dying" << (s == DYING) << endl;
-        cout << "   Is dead" << (s == DEAD) << endl;
-        cout << "   Is disappearing" << (s == Disappearing) << endl; // not expected to be visible in this project
+        cout << "   Stopped " << (!is_moving()?"true":"false") << endl;
+        cout << "   Is dying " << ((s == DYING)?"true":"false") << endl;
+        cout << "   Is dead " << ((s == DEAD)?"true":"false" )<< endl;
+        cout << "   Is disappearing " << ((s == Disappearing)?"true":"false") << endl; // not expected to be visible in this project
     };
 
     // ask Model to broadcast our current state to all Views
