@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:controller="controller.SelectAble" fx:id="selectAble" alignment="TOP_CENTER" spacing="5.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <RadioButton fx:id="btn_select" mnemonicParsing="false" />
+      <Text fx:id="txt_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+   </children>
+</HBox>

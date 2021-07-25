@@ -1,0 +1,431 @@
+Index: UI/src/main/java/visitor/QuestionGenrator.java
+===================================================================
+diff --git a/UI/src/main/java/visitor/QuestionGenrator.java b/UI/src/main/java/visitor/QuestionGenrator.java
+deleted file mode 100644
+--- a/UI/src/main/java/visitor/QuestionGenrator.java	(revision a1e60f30ffe9257e7a1a16866218e65f42c0b03a)
++++ /dev/null	(revision a1e60f30ffe9257e7a1a16866218e65f42c0b03a)
+@@ -1,28 +0,0 @@
+-package visitor;
+-
+-import interfaces.QuestionVisitor;
+-import javafx.scene.Node;
+-import objects.CharGozineii;
+-import objects.EntekhabiQuestion;
+-
+-import java.util.function.Consumer;
+-
+-public class QuestionGenrator implements QuestionVisitor {
+-
+-    private final Consumer<Node> consumer;
+-
+-    public QuestionGenrator(Consumer<Node> consumer){
+-
+-        this.consumer = consumer;
+-    }
+-    @Override
+-    public void visit(EntekhabiQuestion entekhabiQuestion) {
+-        entekhabiQuestion.getVisitedBy(this);
+-        entekhabiQuestion.isAnsweredCorrectly()
+-    }
+-
+-    @Override
+-    public void visit(CharGozineii charGozineii) {
+-
+-    }
+-}
+Index: UI/src/main/java/basics/AnswerNode.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UI/src/main/java/basics/AnswerNode.java b/UI/src/main/java/basics/AnswerNode.java
+new file mode 100644
+--- /dev/null	(date 1626948160506)
++++ b/UI/src/main/java/basics/AnswerNode.java	(date 1626948160506)
+@@ -0,0 +1,24 @@
++package basics;
++
++import exceptions.AlreadyExist;
++
++import java.util.function.Consumer;
++
++public abstract class AnswerNode {
++    private Consumer<Boolean> c;
++    private Boolean b = null;
++    public void consumeAnswerSensor(Consumer<Boolean> c){
++        this.c = c;
++    }
++    public boolean finalizeAnswer() throws AlreadyExist {
++        if(b == null) {
++            b = onFinalAnswerCalled();
++            c.accept(b);
++            return b;
++        }else
++            throw new AlreadyExist("already answered");
++
++    }
++
++    public abstract boolean onFinalAnswerCalled();
++}
+Index: UI/src/main/java/controller/CharGozineCell.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UI/src/main/java/controller/CharGozineCell.java b/UI/src/main/java/controller/CharGozineCell.java
+new file mode 100644
+--- /dev/null	(date 1626948160518)
++++ b/UI/src/main/java/controller/CharGozineCell.java	(date 1626948160518)
+@@ -0,0 +1,99 @@
++package controller;
++
++import basics.AnswerNode;
++import javafx.event.ActionEvent;
++import javafx.event.EventHandler;
++import javafx.fxml.FXML;
++import javafx.fxml.Initializable;
++import javafx.scene.control.RadioButton;
++import javafx.scene.text.Text;
++import objects.CharGozineii;
++
++import java.net.URL;
++import java.util.List;
++import java.util.ResourceBundle;
++
++public class CharGozineCell extends AnswerNode implements Initializable {
++
++    @FXML
++    private Text txt_description;
++
++    @FXML
++    private RadioButton btn_1;
++
++    @FXML
++    private Text txt_1;
++
++    @FXML
++    private RadioButton btn_2;
++
++    @FXML
++    private Text txt_2;
++
++    @FXML
++    private RadioButton btn_3;
++
++    @FXML
++    private Text txt_3;
++
++    @FXML
++    private RadioButton btn_4;
++
++    @FXML
++    private Text txt_4;
++
++    @Override
++    public void initialize(URL location, ResourceBundle resources) {
++        btn_1.setOnAction(new MyEvent(btn_1));
++        btn_2.setOnAction(new MyEvent(btn_2));
++        btn_3.setOnAction(new MyEvent(btn_3));
++        btn_4.setOnAction(new MyEvent(btn_4));
++    }
++
++    @Override
++    public boolean onFinalAnswerCalled() {
++
++        if(correctAnswer==1)
++            return btn_1.isSelected();
++        else if(correctAnswer==2)
++            return btn_2.isSelected();
++        else if(correctAnswer==3)
++            return btn_3.isSelected();
++        else if(correctAnswer==4)
++            return btn_4.isSelected();
++
++        else return false;
++    }
++
++    class MyEvent implements EventHandler<ActionEvent>{
++        private final RadioButton btn;
++        public MyEvent(RadioButton btn){
++            this.btn = btn;
++        }
++        @Override
++        public void handle(ActionEvent event) {
++            if(btn != btn_1)
++                btn_1.setSelected(false);
++            if(btn != btn_2)
++                btn_2.setSelected(false);
++            if(btn != btn_3)
++                btn_3.setSelected(false);
++            if(btn != btn_4)
++                btn_4.setSelected(false);
++        }
++    }
++
++    Integer correctAnswer;
++    public void consume(CharGozineii charGozineii) {
++
++        txt_description.setText(charGozineii.provideQuestionDescription());
++        List<String> answers = charGozineii.providedAnswers();
++
++        correctAnswer = charGozineii.getCorrectChoice();
++        txt_1.setText(answers.get(0));
++        txt_2.setText(answers.get(1));
++        txt_3.setText(answers.get(2));
++        txt_4.setText(answers.get(3));
++
++    }
++}
+Index: UI/src/main/java/controller/ExamController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package controller;\n\nimport facades.QuestionFacadeAdaptor;\nimport interfaces.IDataBase;\nimport javafx.fxml.FXML;\nimport javafx.fxml.Initializable;\nimport javafx.scene.control.Button;\nimport javafx.scene.control.ListView;\nimport javafx.scene.layout.VBox;\nimport objects.Exam;\nimport objects.Student;\n\nimport java.net.URL;\nimport java.util.ResourceBundle;\n\npublic class ExamController implements Initializable {\n\n\n    @FXML\n    private ListView<QuestionFacadeAdaptor> list_q;\n\n    @FXML\n    private VBox fillBox;\n\n    @FXML\n    private Button btn_exit;\n\n    @FXML\n    private Button btn_next;\n\n    @FXML\n    private Button btn_end;\n\n    Student s;\n    IDataBase db;\n    Exam e ;\n\n    @Override\n    public void initialize(URL location, ResourceBundle resources) {\n        list_q.setCellFactory(()->{\n            return new QuestionCell();\n        });\n    }\n\n    void provideStudentAndDB(Student s,IDataBase db){\n        this.s =s ;\n        this.db = db;\n        db.provideExamForCorrespondingStudent(s).ifPresentOrElse(exam -> {\n            e = exam;\n        },()->{\n            //TODO when there is no exam available\n        });\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UI/src/main/java/controller/ExamController.java b/UI/src/main/java/controller/ExamController.java
+--- a/UI/src/main/java/controller/ExamController.java	(revision a1e60f30ffe9257e7a1a16866218e65f42c0b03a)
++++ b/UI/src/main/java/controller/ExamController.java	(date 1626949339742)
+@@ -5,13 +5,20 @@
+ import javafx.fxml.FXML;
+ import javafx.fxml.Initializable;
+ import javafx.scene.control.Button;
++import javafx.scene.control.ListCell;
+ import javafx.scene.control.ListView;
+ import javafx.scene.layout.VBox;
++import javafx.scene.media.Media;
++import javafx.scene.media.MediaPlayer;
++import javafx.util.Callback;
+ import objects.Exam;
+ import objects.Student;
++import runner.MainUI;
+ 
+ import java.net.URL;
++import java.util.Random;
+ import java.util.ResourceBundle;
++import java.util.function.Consumer;
+ 
+ public class ExamController implements Initializable {
+ 
+@@ -26,29 +33,56 @@
+     private Button btn_exit;
+ 
+     @FXML
+-    private Button btn_next;
++    private Button btn_setAnswer;
+ 
+     @FXML
+     private Button btn_end;
+ 
+     Student s;
+     IDataBase db;
+-    Exam e ;
++    Exam e;
+ 
+     @Override
+     public void initialize(URL location, ResourceBundle resources) {
+-        list_q.setCellFactory(()->{
+-            return new QuestionCell();
++        list_q.setCellFactory(new Callback<ListView<QuestionFacadeAdaptor>, ListCell<QuestionFacadeAdaptor>>() {
++            @Override
++            public ListCell<QuestionFacadeAdaptor> call(ListView<QuestionFacadeAdaptor> param) {
++                return new QuestionCell(tashviq);
++            }
+         });
+     }
+ 
+-    void provideStudentAndDB(Student s,IDataBase db){
+-        this.s =s ;
++    void provideStudentAndDB(Student s, IDataBase db) {
++        this.s = s;
+         this.db = db;
+         db.provideExamForCorrespondingStudent(s).ifPresentOrElse(exam -> {
+             e = exam;
+-        },()->{
++        }, () -> {
+             //TODO when there is no exam available
+         });
+     }
++
++    Consumer<Boolean> tashviq = new Consumer<Boolean>() {
++        @Override
++        public void accept(Boolean aBoolean) {
++            if(aBoolean){
++                int i = new Random().nextInt(3);
++                Media m;
++                if (i == 0)
++                    m = new Media(MainUI.class.getClassLoader().getResource("0.mp3").toString());
++                else if (i == 1)
++                    m = new Media(MainUI.class.getClassLoader().getResource("1.mp3").toString());
++                else
++                    m = new Media(MainUI.class.getClassLoader().getResource("2.mp3").toString());
++
++                MediaPlayer mp = new MediaPlayer(m);
++                mp.play();
++            }
++            showNextQuestionOrFinish();
++        }
++    };
++
++    private void showNextQuestionOrFinish() {
++        //todo
++    }
+ }
+Index: UI/src/main/java/controller/QuestionCell.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package controller;\n\nimport facades.QuestionFacadeAdaptor;\nimport javafx.scene.Node;\nimport javafx.scene.control.ListCell;\nimport visitor.QuestionGenrator;\n\nimport java.util.function.Consumer;\n\npublic class QuestionCell extends ListCell<QuestionFacadeAdaptor> {\n\n    Consumer<Boolean> qAnswered;\n\n    public QuestionCell(Consumer<Boolean> qAnswered) {\n        this.qAnswered = qAnswered;\n    }\n\n    @Override\n    protected void updateItem(QuestionFacadeAdaptor item, boolean empty) {\n        super.updateItem(item, empty);\n        if(!empty && item!=null){\n            this.setText(null);\n            this.setGraphicTextGap(0);\n            item.getQuestion().getVisitedBy(q);\n        }\n    }\n\n    private  final QuestionGenrator q = new QuestionGenrator(this::setGraphic);\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UI/src/main/java/controller/QuestionCell.java b/UI/src/main/java/controller/QuestionCell.java
+--- a/UI/src/main/java/controller/QuestionCell.java	(revision a1e60f30ffe9257e7a1a16866218e65f42c0b03a)
++++ b/UI/src/main/java/controller/QuestionCell.java	(date 1626948160526)
+@@ -1,16 +1,24 @@
+ package controller;
+ 
++import basics.AnswerNode;
+ import facades.QuestionFacadeAdaptor;
++import interfaces.QuestionVisitor;
++import javafx.fxml.FXMLLoader;
+ import javafx.scene.Node;
+ import javafx.scene.control.ListCell;
+-import visitor.QuestionGenrator;
++import javafx.scene.layout.VBox;
++import objects.CharGozineii;
++import objects.EntekhabiAnswer;
++import objects.EntekhabiQuestion;
++import runner.MainUI;
+ 
++import java.io.IOException;
+ import java.util.function.Consumer;
+ 
+-public class QuestionCell extends ListCell<QuestionFacadeAdaptor> {
++public class QuestionCell extends ListCell<QuestionFacadeAdaptor> implements QuestionVisitor {
+ 
+     Consumer<Boolean> qAnswered;
+-
++    AnswerNode node;
+     public QuestionCell(Consumer<Boolean> qAnswered) {
+         this.qAnswered = qAnswered;
+     }
+@@ -18,12 +26,31 @@
+     @Override
+     protected void updateItem(QuestionFacadeAdaptor item, boolean empty) {
+         super.updateItem(item, empty);
+-        if(!empty && item!=null){
++        if (!empty && item != null) {
+             this.setText(null);
+             this.setGraphicTextGap(0);
+-            item.getQuestion().getVisitedBy(q);
++            item.getQuestion().getVisitedBy(this);
+         }
+     }
++
++    @Override
++    public void visit(EntekhabiQuestion entekhabiQuestion) {
++
++    }
+ 
+-    private  final QuestionGenrator q = new QuestionGenrator(this::setGraphic);
++    @Override
++    public void visit(CharGozineii charGozineii) {
++        FXMLLoader loader = new FXMLLoader(MainUI.class.getClassLoader().getResource("char_gozine.fxml"));
++
++        try {
++            VBox v = loader.load();
++            CharGozineCell controller = loader.getController();
++            controller.consume(charGozineii);
++            node = controller;
++            node.consumeAnswerSensor(qAnswered);
++            this.setGraphic(v);
++        } catch (IOException e) {
++            e.printStackTrace();
++        }
++    }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"0b998795-3fa9-47ae-8790-7baf52642a79\" name=\"Default Changelist\" comment=\"Login and SignUp done\">\n      <change afterPath=\"$PROJECT_DIR$/BackEnd/src/main/java/facades/QuestionFacadeAdaptor.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/UI/src/main/java/controller/ExamController.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/UI/src/main/java/controller/MainPage.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/UI/src/main/java/controller/QuestionCell.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/UI/src/main/java/visitor/QuestionGenrator.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gradle/7.0.2/fileHashes/resourceHashesCache.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/7.0.2/fileHashes/resourceHashesCache.bin\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gradle/7.0.2/javaCompile/classAnalysis.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/7.0.2/javaCompile/classAnalysis.bin\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gradle/7.0.2/javaCompile/jarAnalysis.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/7.0.2/javaCompile/jarAnalysis.bin\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gradle/checksums/checksums.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/checksums/checksums.lock\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BackEnd/src/main/java/interfaces/IDataBase.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BackEnd/src/main/java/interfaces/IDataBase.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BackEnd/src/main/java/objects/CharGozineii.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BackEnd/src/main/java/objects/CharGozineii.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BackEnd/src/main/java/objects/EntekhabiAnswer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BackEnd/src/main/java/objects/EntekhabiAnswer.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BackEnd/src/main/java/objects/EntekhabiQuestion.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BackEnd/src/main/java/objects/EntekhabiQuestion.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BackEnd/src/main/java/objects/Exam.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BackEnd/src/main/java/objects/Exam.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/BackEnd/src/test/java/SerializationTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/BackEnd/src/test/java/SerializationTest.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/UI/src/main/java/controller/LoginSignupController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/UI/src/main/java/controller/LoginSignupController.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ExternalProjectsData\">\n    <projectState path=\"$PROJECT_DIR$\">\n      <ProjectState />\n    </projectState>\n  </component>\n  <component name=\"ExternalProjectsManager\">\n    <system id=\"GRADLE\">\n      <state>\n        <task path=\"$PROJECT_DIR$/..\">\n          <activation />\n        </task>\n        <task path=\"$PROJECT_DIR$\">\n          <activation />\n        </task>\n        <task path=\"$PROJECT_DIR$/UI\">\n          <activation />\n        </task>\n        <projects_view>\n          <tree_state>\n            <expand>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"student_question_app\" type=\"f1a62948:ProjectNode\" />\n              </path>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"student_question_app\" type=\"f1a62948:ProjectNode\" />\n                <item name=\"Run Configurations\" type=\"7b0102dc:RunConfigurationsNode\" />\n              </path>\n            </expand>\n            <select />\n          </tree_state>\n        </projects_view>\n      </state>\n    </system>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Interface\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitSEFilterConfiguration\">\n    <file-type-list>\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\n      <filtered-out-file-type name=\"TAG\" />\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\n    </file-type-list>\n  </component>\n  <component name=\"ProjectId\" id=\"1vCb793QxYXJDMkNAmsySgi50fc\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\n    <property name=\"project.structure.side.proportion\" value=\"0.0\" />\n    <property name=\"restartRequiresConfirmation\" value=\"false\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"reference.settingsdialog.project.gradle\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CreateClassDialog.RecentsKey\">\n      <recent name=\"controller\" />\n    </key>\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/resources\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/UI/src/main/resources\" />\n      <recent name=\"$PROJECT_DIR$/UI\" />\n    </key>\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n      <recent name=\"\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Gradle.SerializationTest.SerializeExam\">\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\n      <module name=\"student_question_app.main\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"ArquillianJUnit\" factoryName=\"\" nameIsGenerated=\"true\">\n      <option name=\"arquillianRunConfiguration\">\n        <value>\n          <option name=\"containerStateName\" value=\"\" />\n        </value>\n      </option>\n      <option name=\"TEST_OBJECT\" value=\"class\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"MamadPlayerClient [run]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\"run\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"MamadPlayerClient [shadowDistZip]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\"shadowDistZip\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"SerializationTest.SerializeExam\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" value=\"--tests &quot;SerializationTest.SerializeExam&quot;\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\":BackEnd:test\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"student_question_app:UI [run]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$/UI\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\"run\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"sv\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" value=\"\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\"run\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" value=\"sv\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <method v=\"2\" />\n    </configuration>\n    <list>\n      <item itemvalue=\"Application.Main\" />\n      <item itemvalue=\"Gradle.sv\" />\n      <item itemvalue=\"Gradle.MamadPlayerClient [run]\" />\n      <item itemvalue=\"Gradle.MamadPlayerClient [shadowDistZip]\" />\n      <item itemvalue=\"Gradle.student_question_app:UI [run]\" />\n      <item itemvalue=\"Gradle.SerializationTest.SerializeExam\" />\n    </list>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Gradle.SerializationTest.SerializeExam\" />\n        <item itemvalue=\"Gradle.student_question_app:UI [run]\" />\n        <item itemvalue=\"Application.Main\" />\n        <item itemvalue=\"Gradle.MamadPlayerClient [run]\" />\n        <item itemvalue=\"Gradle.MamadPlayerClient [shadowDistZip]\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"0b998795-3fa9-47ae-8790-7baf52642a79\" name=\"Default Changelist\" comment=\"\" />\n      <created>1626068847767</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1626068847767</updated>\n      <workItem from=\"1626068849123\" duration=\"169000\" />\n      <workItem from=\"1626069165978\" duration=\"7506000\" />\n      <workItem from=\"1626092238776\" duration=\"18112000\" />\n      <workItem from=\"1626111988233\" duration=\"15799000\" />\n      <workItem from=\"1626128174897\" duration=\"634000\" />\n      <workItem from=\"1626129242589\" duration=\"713000\" />\n      <workItem from=\"1626153723239\" duration=\"3414000\" />\n      <workItem from=\"1626159530057\" duration=\"24000\" />\n      <workItem from=\"1626267562380\" duration=\"21562000\" />\n      <workItem from=\"1626293137918\" duration=\"815000\" />\n      <workItem from=\"1626294058804\" duration=\"1210000\" />\n      <workItem from=\"1626343614098\" duration=\"2562000\" />\n      <workItem from=\"1626346205577\" duration=\"1466000\" />\n      <workItem from=\"1626348077672\" duration=\"11300000\" />\n      <workItem from=\"1626375912332\" duration=\"952000\" />\n      <workItem from=\"1626379513475\" duration=\"494000\" />\n      <workItem from=\"1626380385184\" duration=\"6134000\" />\n      <workItem from=\"1626395952892\" duration=\"118000\" />\n      <workItem from=\"1626765516188\" duration=\"5580000\" />\n      <workItem from=\"1626771691569\" duration=\"235000\" />\n      <workItem from=\"1626900023676\" duration=\"3899000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"just 4 hours - no fancy UI - POC\">\n      <created>1626093872239</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1626093872239</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"just 4 hours - no fancy UI - POC\">\n      <created>1626094394839</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1626094394839</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"added VLCJ - might be a little leaky for now but its vlc :D\">\n      <created>1626125781038</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1626125781038</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"first legit run\">\n      <created>1626158294998</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1626158294998</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"graceful shutdowns and daemon threads, ServiceDiscovery is now continues\">\n      <created>1626274183968</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1626274183969</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"gradle cleanup\">\n      <created>1626274256698</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1626274256698</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"hot switching + unique seeker\">\n      <created>1626278849557</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1626278849557</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"now more legit, in next open window i might switch to MaterialFX its time for UI now\">\n      <created>1626293937137</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1626293937137</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"integration with arduino and serials\">\n      <created>1626376726917</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1626376726917</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"sorted and searchable ctrl+f and esc keys\">\n      <created>1626387092198</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1626387092198</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"Login and SignUp done\">\n      <created>1626876336593</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1626876336593</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"12\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"master\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <ignored-roots>\n      <path value=\"$PROJECT_DIR$/..\" />\n    </ignored-roots>\n    <MESSAGE value=\"just 4 hours - no fancy UI - POC\" />\n    <MESSAGE value=\"added VLCJ - might be a little leaky for now but its vlc :D\" />\n    <MESSAGE value=\"first legit run\" />\n    <MESSAGE value=\"graceful shutdowns and daemon threads, ServiceDiscovery is now continues\" />\n    <MESSAGE value=\"gradle cleanup\" />\n    <MESSAGE value=\"hot switching + unique seeker\" />\n    <MESSAGE value=\"now more legit, in next open window i might switch to MaterialFX its time for UI now\" />\n    <MESSAGE value=\"integration with arduino and serials\" />\n    <MESSAGE value=\"sorted and searchable ctrl+f and esc keys\" />\n    <MESSAGE value=\"Login and SignUp done\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Login and SignUp done\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/player/VLCMediaPlayer.java</url>\n          <line>58</line>\n          <option name=\"timeStamp\" value=\"55\" />\n        </line-breakpoint>\n        <line-breakpoint type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/player/MediaPlayerASClient.java</url>\n          <line>169</line>\n          <option name=\"timeStamp\" value=\"59\" />\n        </line-breakpoint>\n        <line-breakpoint type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/player/VLCMediaPlayer.java</url>\n          <line>68</line>\n          <option name=\"timeStamp\" value=\"60\" />\n        </line-breakpoint>\n        <line-breakpoint type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/controller/MainController.java</url>\n          <line>284</line>\n          <option name=\"timeStamp\" value=\"71\" />\n        </line-breakpoint>\n        <line-breakpoint type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/player/VLCMediaPlayer.java</url>\n          <line>78</line>\n          <option name=\"timeStamp\" value=\"74\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/component/RightPane.java</url>\n          <line>156</line>\n          <option name=\"timeStamp\" value=\"83\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/model/Meta.java</url>\n          <line>64</line>\n          <option name=\"timeStamp\" value=\"87\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/model/Meta.java</url>\n          <line>65</line>\n          <option name=\"timeStamp\" value=\"88\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/model/Meta.java</url>\n          <line>67</line>\n          <option name=\"timeStamp\" value=\"89\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/player/MediaPlayerASServer.java</url>\n          <line>38</line>\n          <option name=\"timeStamp\" value=\"94\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/player/VLCMediaPlayer.java</url>\n          <line>112</line>\n          <option name=\"timeStamp\" value=\"97\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/player/VLCMediaPlayer.java</url>\n          <line>104</line>\n          <option name=\"timeStamp\" value=\"98\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/player/VLCMediaPlayer.java</url>\n          <line>106</line>\n          <option name=\"timeStamp\" value=\"100\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/player/VLCMediaPlayer.java</url>\n          <line>105</line>\n          <option name=\"timeStamp\" value=\"101\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/serial/SexyArduinoLights.java</url>\n          <line>60</line>\n          <option name=\"timeStamp\" value=\"114\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/serial/SexyArduinoLights.java</url>\n          <line>55</line>\n          <option name=\"timeStamp\" value=\"115\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/serial/SexyArduinoLights.java</url>\n          <line>56</line>\n          <option name=\"timeStamp\" value=\"116\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/serial/SexyArduinoLights.java</url>\n          <line>75</line>\n          <option name=\"timeStamp\" value=\"117\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/serial/SerialEntity.java</url>\n          <line>19</line>\n          <option name=\"timeStamp\" value=\"122\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/serial/SerialEntity.java</url>\n          <line>41</line>\n          <option name=\"timeStamp\" value=\"123\" />\n        </line-breakpoint>\n        <breakpoint type=\"java-exception\">\n          <properties class=\"java.net.SocketException\" package=\"java.net\" />\n          <option name=\"timeStamp\" value=\"28\" />\n        </breakpoint>\n        <breakpoint enabled=\"true\" type=\"java-exception\">\n          <properties class=\"java.lang.UnsupportedOperationException\" package=\"java.lang\" />\n          <option name=\"timeStamp\" value=\"124\" />\n        </breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\n          <url>file://$PROJECT_DIR$/src/main/java/ir/tesla_tic/serial/SerialEntity.java</url>\n          <line>18</line>\n          <properties class=\"ir.tesla_tic.serial.SerialEntity\">\n            <option name=\"EMULATED\" value=\"true\" />\n          </properties>\n          <option name=\"timeStamp\" value=\"103\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n    <watches-manager>\n      <configuration name=\"GradleRunConfiguration\">\n        <watch expression=\"mp.media\" language=\"JAVA\" />\n      </configuration>\n    </watches-manager>\n  </component>\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\n    <expand />\n    <select />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision a1e60f30ffe9257e7a1a16866218e65f42c0b03a)
++++ b/.idea/workspace.xml	(date 1626949406810)
+@@ -4,34 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="0b998795-3fa9-47ae-8790-7baf52642a79" name="Default Changelist" comment="Login and SignUp done">
+-      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/facades/QuestionFacadeAdaptor.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/UI/src/main/java/controller/ExamController.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/UI/src/main/java/controller/MainPage.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/UI/src/main/java/controller/QuestionCell.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/UI/src/main/java/visitor/QuestionGenrator.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/classAnalysis.bin" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/jarAnalysis.bin" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
++    <list default="true" id="0b998795-3fa9-47ae-8790-7baf52642a79" name="Default Changelist" comment="facade">
++      <change afterPath="$PROJECT_DIR$/UI/src/main/java/basics/AnswerNode.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/UI/src/main/java/controller/CharGozineCell.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/interfaces/IDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/interfaces/IDataBase.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/objects/CharGozineii.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/objects/CharGozineii.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/objects/EntekhabiAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/objects/EntekhabiAnswer.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/objects/EntekhabiQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/objects/EntekhabiQuestion.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/objects/Exam.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/objects/Exam.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/BackEnd/src/test/java/SerializationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/test/java/SerializationTest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UI/src/main/java/controller/LoginSignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/main/java/controller/LoginSignupController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/UI/src/main/java/controller/ExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/main/java/controller/ExamController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/UI/src/main/java/controller/QuestionCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/main/java/controller/QuestionCell.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/UI/src/main/java/visitor/QuestionGenrator.java" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -303,6 +282,7 @@
+       <workItem from="1626765516188" duration="5580000" />
+       <workItem from="1626771691569" duration="235000" />
+       <workItem from="1626900023676" duration="3899000" />
++      <workItem from="1626945570376" duration="3683000" />
+     </task>
+     <task id="LOCAL-00001" summary="just 4 hours - no fancy UI - POC">
+       <created>1626093872239</created>
+@@ -381,7 +361,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1626876336593</updated>
+     </task>
+-    <option name="localTasksCounter" value="12" />
++    <task id="LOCAL-00012" summary="facade">
++      <created>1626945613273</created>
++      <option name="number" value="00012" />
++      <option name="presentableId" value="LOCAL-00012" />
++      <option name="project" value="LOCAL" />
++      <updated>1626945613273</updated>
++    </task>
++    <option name="localTasksCounter" value="13" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -425,7 +412,8 @@
+     <MESSAGE value="integration with arduino and serials" />
+     <MESSAGE value="sorted and searchable ctrl+f and esc keys" />
+     <MESSAGE value="Login and SignUp done" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Login and SignUp done" />
++    <MESSAGE value="facade" />
++    <option name="LAST_COMMIT_MESSAGE" value="facade" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
